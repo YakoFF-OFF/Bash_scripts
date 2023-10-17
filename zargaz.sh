@@ -22,10 +22,14 @@ NC='\033[0m' # No Color
 ch_idpas() {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 local v_domain=$(cat /mnt/distemp/variables/v_domain.txt)
 local v_comp=$(cat /mnt/distemp/variables/v_comp.txt)
 
 c_id=$(adcli show-computer -U $first --domain=$v_domain $v_comp --stdin-password <<< $second &> /tmp/comp_check.txt)
+=======
+c_id=$(adcli show-computer -U $first --domain=ZARGAZ.RU SPB1-241G --stdin-password <<< $second &> /tmp/comp_check.txt)
+>>>>>>> parent of a9328f2 (Delete zargaz.sh)
 =======
 c_id=$(adcli show-computer -U $first --domain=ZARGAZ.RU SPB1-241G --stdin-password <<< $second &> /tmp/comp_check.txt)
 >>>>>>> parent of a9328f2 (Delete zargaz.sh)
@@ -43,6 +47,12 @@ fi
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> parent of a9328f2 (Delete zargaz.sh)
 =======
 
 
@@ -65,10 +75,14 @@ fi
 
 ch_comp() {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 local v_domain=$(cat /mnt/distemp/variables/v_domain.txt)
 
 check=$(adcli show-computer -U $first --domain=$v_domain $1 --stdin-password <<< $second &> /tmp/comp_check.txt)
+=======
+check=$(adcli show-computer -U $first --domain=ZARGAZ.RU $1 --stdin-password <<< $second &> /tmp/comp_check.txt)
+>>>>>>> parent of a9328f2 (Delete zargaz.sh)
 =======
 check=$(adcli show-computer -U $first --domain=ZARGAZ.RU $1 --stdin-password <<< $second &> /tmp/comp_check.txt)
 >>>>>>> parent of a9328f2 (Delete zargaz.sh)
@@ -149,6 +163,7 @@ fi
 done
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Перемнные пути юнита из АД, в какую папку ляжет комп после ввода в домен
 ## v_unit_d  - 
 
@@ -159,6 +174,8 @@ local v_unit_v=$(cat /mnt/distemp/variables/v_unit_v.txt)
 
 =======
 >>>>>>> parent of a9328f2 (Delete zargaz.sh)
+=======
+>>>>>>> parent of a9328f2 (Delete zargaz.sh)
 
 # Выбор типа нужной рабстанции
 while true;
@@ -166,9 +183,15 @@ do
     read -r -p "Юнит машины в домене D - desc L - Laptop V - Virtual (D/L/V): " three
     case $three in
 <<<<<<< HEAD
+<<<<<<< HEAD
         [Dd]*) UnitOU=$v_unit_d; break;;
         [Ll]*) UnitOU=$v_unit_l; break;;
         [Vv]*) UnitOU=$v_unit_v; break;;
+=======
+        [Dd]*) UnitOU='OU=Desktops,OU=Workstations,OU=SPB1,OU=GAZPROM INT'; break;;
+        [Ll]*) UnitOU="OU=Laptops,OU=Workstations,OU=SPB1,OU='GAZPROM INT'"; break;;
+        [Vv]*) UnitOU="OU=Geological,OU=Virtual,OU=Desktops,OU=Workstations,OU=SPB1,OU='GAZPROM INT'"; break;;
+>>>>>>> parent of a9328f2 (Delete zargaz.sh)
 =======
         [Dd]*) UnitOU='OU=Desktops,OU=Workstations,OU=SPB1,OU=GAZPROM INT'; break;;
         [Ll]*) UnitOU="OU=Laptops,OU=Workstations,OU=SPB1,OU='GAZPROM INT'"; break;;
@@ -179,6 +202,11 @@ do
 done
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+echo $UnitOU
+
+>>>>>>> parent of a9328f2 (Delete zargaz.sh)
 =======
 echo $UnitOU
 
@@ -226,9 +254,15 @@ for ((i=40;i<301;i++))
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 local v_domain=$(cat /mnt/distemp/variables/v_domain.txt)
 
 join-to-domain.sh -d $v_domain -n $t_num -u $first -p $second -o "$UnitOU"  -y
+=======
+
+
+join-to-domain.sh -d ZARGAZ.RU -n $t_num -u $first -p $second -o "$UnitOU"  -y
+>>>>>>> parent of a9328f2 (Delete zargaz.sh)
 =======
 
 
@@ -239,6 +273,11 @@ join-to-domain.sh -d ZARGAZ.RU -n $t_num -u $first -p $second -o "$UnitOU"  -y
 second=1
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+echo $second
+
+>>>>>>> parent of a9328f2 (Delete zargaz.sh)
 =======
 echo $second
 
